@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Information Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>User Registration</h1>
+      <form id="userForm" onsubmit="handleFormSubmit(event)">    <!--Event Occure when Form will submit-->
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            placeholder="Enter First Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            placeholder="Enter Last Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="aadhaar">Aadhaar</label>
+          <input
+            type="text"
+            id="aadhaar"
+            placeholder="Enter Aadhaar Number"
+            pattern="[0-9]{12}"
+            maxlength="12"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="pan">PAN</label>
+          <input
+            type="text"
+            id="pan"
+            minlength="10"
+            maxlength="10"
+            placeholder="Enter PAN Number"
+            required
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <button class="view-users-btn" onclick="gotoUsers()"> <!--when user click on button function will call-->
+        View Registered Users
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
