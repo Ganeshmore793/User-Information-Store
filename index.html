@@ -16,54 +16,32 @@
   <body>
     <div class="form-container">
       <h1>User Registration</h1>
-      <form id="userForm" onsubmit="handleFormSubmit(event)">    <!--Event Occure when Form will submit-->
+      <form id="userForm" onsubmit="handleFormSubmit(event)">
         <div class="form-group">
           <label for="firstName">First Name</label>
-          <input
-            type="text"
-            id="firstName"
-            placeholder="Enter First Name"
-            required
-          />
+          <input type="text" id="firstName" placeholder="Enter First Name" required />
         </div>
         <div class="form-group">
           <label for="lastName">Last Name</label>
-          <input
-            type="text"
-            id="lastName"
-            placeholder="Enter Last Name"
-            required
-          />
+          <input type="text" id="lastName" placeholder="Enter Last Name" required />
         </div>
         <div class="form-group">
           <label for="aadhaar">Aadhaar</label>
-          <input
-            type="text"
-            id="aadhaar"
-            placeholder="Enter Aadhaar Number"
-            pattern="[0-9]{12}"
-            maxlength="12"
-            required
-          />
+          <input type="number" id="aadhaar" placeholder="Enter Aadhaar Number" maxlength="12" onchange="validate()" required />
         </div>
         <div class="form-group">
           <label for="pan">PAN</label>
-          <input
-            type="text"
-            id="pan"
-            minlength="10"
-            maxlength="10"
-            placeholder="Enter PAN Number"
-            required
-          />
+          <input type="text" id="pan" minlength="10" maxlength="10" placeholder="Enter PAN Number" onchange="validate()" required/>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" id="sub">Submit</button>
       </form>
-      <button class="view-users-btn" onclick="gotoUsers()"> <!--when user click on button function will call-->
-        View Registered Users
-      </button>
+      <button id="showUserListButton" onclick="toggleUserList()">Show User List</button>
     </div>
-
+    <div id="userCardsContainer" class="user-cards-container" style="display: none;"></div>
+    <div id="userCardContainer" class="user-card-container" style="display: none;">
+      <div class="user-card" id="newUserCard"></div>
+      <button id="closeUserCard" onclick="closeUserCard()">Close</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
